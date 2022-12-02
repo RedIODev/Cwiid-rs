@@ -5,14 +5,14 @@ fn main() {
         .probe("cwiid")
         .unwrap();
     let src = [
-        "include/bluetooth.c",
-        "include/command.c",
-        "include/connect.c",
-        "include/interface.c",
-        "include/process.c",
-        "include/state.c",
-        "include/thread.c",
-        "include/util.c"
+        "src/bluetooth.c",
+        "src/command.c",
+        "src/connect.c",
+        "src/interface.c",
+        "src/process.c",
+        "src/state.c",
+        "src/thread.c",
+        "src/util.c"
     ];
     let mut builder = cc::Build::new();
     let build = builder
