@@ -1,6 +1,6 @@
 [package]
 name = "libcwiid-sys"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license-file = "LICENSE"
 readme = "README.md"
@@ -8,7 +8,7 @@ description = "Rust bindings for cwiid (Wii remote \"Wiimote\" api bindings)"
 repository = "https://github.com/RedIODev/Cwiid-rs"
 
 [lib]
-crate-type= ["cdylib"]
+crate-type= ["rlib"]
 
 [dependencies]
 libc = "0.2.137"
