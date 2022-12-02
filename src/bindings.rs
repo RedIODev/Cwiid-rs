@@ -5309,10 +5309,10 @@ fn bindgen_test_layout_bdaddr_t() {
     );
 }
 extern "C" {
-    pub fn baswap(dst: *mut bdaddr_t, src: *const bdaddr_t);
+    pub fn baswap(dst: *const bdaddr_t, src: *const bdaddr_t);
 }
 extern "C" {
-    pub fn strtoba(str_: *const ::std::os::raw::c_char) -> *mut bdaddr_t;
+    pub fn strtoba(str_: *const ::std::os::raw::c_char) -> *const bdaddr_t;
 }
 extern "C" {
     pub fn batostr(ba: *const bdaddr_t) -> *mut ::std::os::raw::c_char;
@@ -5327,7 +5327,7 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    pub fn str2ba(str_: *const ::std::os::raw::c_char, ba: *mut bdaddr_t) -> ::std::os::raw::c_int;
+    pub fn str2ba(str_: *const ::std::os::raw::c_char, ba: *const bdaddr_t) -> ::std::os::raw::c_int;
 }
 extern "C" {
     pub fn ba2oui(ba: *const bdaddr_t, oui: *mut ::std::os::raw::c_char) -> ::std::os::raw::c_int;
@@ -6711,11 +6711,11 @@ extern "C" {
     );
 }
 extern "C" {
-    pub fn cwiid_open(bdaddr: *mut bdaddr_t, flags: ::std::os::raw::c_int) -> *mut cwiid_wiimote_t;
+    pub fn cwiid_open(bdaddr: *const bdaddr_t, flags: ::std::os::raw::c_int) -> *mut cwiid_wiimote_t;
 }
 extern "C" {
     pub fn cwiid_open_timeout(
-        bdaddr: *mut bdaddr_t,
+        bdaddr: *const bdaddr_t,
         flags: ::std::os::raw::c_int,
         timeout: ::std::os::raw::c_int,
     ) -> *mut cwiid_wiimote_t;
@@ -6841,7 +6841,7 @@ extern "C" {
 }
 extern "C" {
     pub fn cwiid_find_wiimote(
-        bdaddr: *mut bdaddr_t,
+        bdaddr: *const bdaddr_t,
         timeout: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
 }
