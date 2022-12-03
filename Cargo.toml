@@ -1,6 +1,6 @@
 [package]
 name = "libcwiid-sys"
-version = "0.1.4"
+version = "0.1.5"
 edition = "2021"
 license-file = "LICENSE"
 readme = "README.md"
@@ -15,7 +15,7 @@ libc = "0.2.137"
 
 [build-dependencies]
 cc = { version = "1.0.77", features = ["parallel"] }
-pkg-config = "0.3.26"
+#pkg-config = "0.3.26"
 
 [package.metadata.cross.build]
 default-target = "armv5te-unknown-linux-gnueabi"
