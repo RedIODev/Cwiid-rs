@@ -16,10 +16,14 @@ fn main() {
         "src/thread.c",
         "src/util.c"
     ];
-    let cc = env::var("CC_armv5te_unknown_linux_gnueabi").unwrap();
-    cc::Build::new()
-        .compiler(cc)
-        .target("armv5te-linux-gnueabi")
+    let mut builder = cc::Build::new();
+    let cc = env::var("CC_armv5te_unknown_linux_gnueabi");
+    let builder = if let Ok(cc) = cc {
+        builder.compiler(cc).target("armv5te-linux-gnueabi")
+    } else {
+        &mut builder
+    };
+    builder
         .files(src.iter())
         .include("include")
         .flag("-Wno-unused-parameter")

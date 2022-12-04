@@ -6,3 +6,6 @@
 
 ## Bindgen
 bindgen include/cwiid.h -o src/bindings.rs
+
+## Optional
+uses cross compiler if CC_armv5te_unknown_linux_gnueabi is detected.
