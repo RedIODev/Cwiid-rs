@@ -1,6 +1,6 @@
 [package]
 name = "libcwiid-sys"
-version = "0.1.5"
+version = "0.1.6"
 edition = "2021"
 license-file = "LICENSE"
 readme = "README.md"
@@ -11,7 +11,7 @@ repository = "https://github.com/RedIODev/Cwiid-rs"
 crate-type= ["rlib"]
 
 [dependencies]
-libc = "0.2.137"
+#libc = "0.1.0"
 
 [build-dependencies]
 cc = { version = "1.0.77", features = ["parallel"] }
@@ -21,7 +21,7 @@ cc = { version = "1.0.77", features = ["parallel"] }
 default-target = "armv5te-unknown-linux-gnueabi"
 
 [package.metadata.cross.target.armv5te-unknown-linux-gnueabi]
-image = "ghcr.io/cross-rs/armv5te-unknown-linux-gnueabi-cross:local"
+image = "ghcr.io/cross-rs/armv5te-unknown-linux-gnueabi-cross-bt:local"
 
 [profile.release]
 lto = true
