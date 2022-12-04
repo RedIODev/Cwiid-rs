@@ -1,3 +1,5 @@
+use std::env;
+
 
 fn main() {
     // pkg_config::Config::new()
@@ -14,10 +16,12 @@ fn main() {
         "src/thread.c",
         "src/util.c"
     ];
-    let mut builder = cc::Build::new();
-    let build = builder
-            .files(src.iter())
-            .include("include")
-            .flag("-Wno-unused-parameter");
-    build.compile("cwiid");
+    let cc = env::var("CC_armv5te_unknown_linux_gnueabi").unwrap();
+    cc::Build::new()
+        .compiler(cc)
+        .target("armv5te-linux-gnueabi")
+        .files(src.iter())
+        .include("include")
+        .flag("-Wno-unused-parameter")
+        .compile("cwiid");
 }
