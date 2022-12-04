@@ -26,6 +26,7 @@ fn main() {
     builder
         .files(src.iter())
         .include("include")
+        .flag("-lbluetooth")
         .flag("-Wno-unused-parameter")
         .compile("cwiid");
 }
