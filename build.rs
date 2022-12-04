@@ -6,6 +6,9 @@ fn main() {
     //     .atleast_version("0.6.00")
     //     .probe("cwiid")
     //     .unwrap();
+
+    println!("cargo:rustc-link-lib=bluetooth");
+    
     let src = [
         "src/bluetooth.c",
         "src/command.c",
