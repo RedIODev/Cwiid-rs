@@ -1,4 +1,4 @@
-use std::env;
+use std::{env, process::Command};
 
 
 fn main() {
@@ -22,10 +22,10 @@ fn main() {
     let mut builder = cc::Build::new();
     let cc = env::var("CC_armv5te_unknown_linux_gnueabi");
     let builder = if let Ok(cc) = cc {
-        println!("Using arm-linux CC");
+        Command::new("echo").arg("Using arm-linux CC").spawn().unwrap();
         builder.compiler(cc).target("armv5te-linux-gnueabi")
     } else {
-        println!("Falling back to system CC");
+        Command::new("echo").arg("Falling back to system CC").spawn().unwrap();
         &mut builder
     };
     builder
