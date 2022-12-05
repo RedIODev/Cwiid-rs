@@ -22,9 +22,10 @@ fn main() {
     let mut builder = cc::Build::new();
     let cc = env::var("CC_armv5te_unknown_linux_gnueabi");
     let builder = if let Ok(cc) = cc {
-        println!("Using arm-linux");
+        println!("Using arm-linux CC");
         builder.compiler(cc).target("armv5te-linux-gnueabi")
     } else {
+        println!("Falling back to system CC");
         &mut builder
     };
     builder
