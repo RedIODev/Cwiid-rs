@@ -8,7 +8,7 @@ fn main() {
     //     .unwrap();
 
     println!("cargo:rustc-link-lib=bluetooth");
-    
+    println!("cargo:rustc-link-search=all=/opt/lib");
     // let src = [
     //     "src/bluetooth.c",
     //     "src/command.c",
