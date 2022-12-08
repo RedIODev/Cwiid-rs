@@ -7,7 +7,7 @@ fn main() {
     //     .probe("cwiid")
     //     .unwrap();
 
-    //println!("cargo:rustc-link-lib=bluetooth");
+    println!("cargo:rustc-link-lib=cwiid");
     //println!("cargo:rustc-link-search=all=/opt/lib");
     // let src = [
     //     "src/bluetooth.c",
